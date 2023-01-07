@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiGithub } from "../api/github";
+import { Repos } from "../types/types";
 
 const fetchRepos = async () => {
 
-    const { data } = await apiGithub.get("/users/pyvan23/repos");
+    const { data } = await apiGithub.get<Repos[]>("/users/pyvan23/repos");
     return data
 };
 
