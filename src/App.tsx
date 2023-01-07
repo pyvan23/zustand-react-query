@@ -1,9 +1,15 @@
+import { useFetchRepos } from './hooks/useRepos';
 
 
-function App(){
+function App() {
+
+  const { data, isLoading } = useFetchRepos()
+
+  if(isLoading) return <div>Loading...</div>
   
+
   return (
-    <div>App</div>
+    
   )
 }
 
