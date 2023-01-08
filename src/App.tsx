@@ -6,7 +6,7 @@ import { useFavouriteRepo } from './store/reposList';
 function App() {
 
   const { data, isLoading } = useFetchRepos()
-  const { addFavoriteRepo, deleteFavoriteRepo, favoritesReposId } = useFavouriteRepo()
+  const { favoritesReposId } = useFavouriteRepo()
 
   if (isLoading) return <div>Loading...</div>
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       {data?.map(repo => (
-        <Cards key={repo.id} repo={repo} />
+        <Cards key={repo.id} repo={repo} isFavorite={favoritesReposId.includes(repo.id)} />
       ))}
 
 
