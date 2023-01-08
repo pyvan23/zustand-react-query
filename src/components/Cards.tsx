@@ -1,10 +1,11 @@
 import { Repos } from "../types/types"
 
 interface Card {
-    repo: Repos
+    repo: Repos,
+    isFavorite: boolean
 }
 
-export const Cards = ({ repo }: Card ) => {
+export const Cards = ({ repo, isFavorite }: Card) => {
 
 
     return (
